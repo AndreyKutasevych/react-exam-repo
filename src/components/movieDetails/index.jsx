@@ -8,7 +8,8 @@ import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
-import MovieReviews from "../movieReviews"
+import MovieReviews from "../movieReviews";
+import Budget from '@mui/icons-material/Savings';
 
 
 const root = {
@@ -55,8 +56,12 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
           label={`${movie.revenue.toLocaleString()}`}
         />
         <Chip
+          icon={<Budget />}
+          label={`Budget: ${movie.budget/1000000}m`}
+        />
+        <Chip
           icon={<StarRate />}
-          label={`${movie.vote_average} (${movie.vote_count})`}
+          label={`${movie.vote_average} (${movie.vote_count})`}c
         />
         <Chip label={`Released: ${movie.release_date}`} />
       </Paper>
